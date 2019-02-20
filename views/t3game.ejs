@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="t3Game">
+	<head>
+		<!-- Header -->
+		<% include ./partials/header %>
+
+		<!-- Styling for the game -->
+		<link rel="stylesheet" type="text/css" href="/css/t3style.css">
+
+		<!-- AngularJS controller -->
+		<script type="text/javascript" src="/js/controllers/t3Controller.js"></script>
+		<script type="text/javascript" src="/js/cores/t3Core.js"></script>
+		<script type="text/javascript" src="/js/services/t3Service.js"></script>
+	</head>
+	
+	<body ng-controller="mainController">
+		<% include ./partials/navbar %>
+		<div class="container" ng-init="init()">
+			<h1>Tic-tac-toe</h1>
+			<h3>The game</h3>
+			<div id="game">
+				<table>
+					<tr ng-repeat="row in tvalue">
+						<td ng-repeat="column in row" ng-click="setit($parent.$index,$index)">{{column.value}}</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<p>This is player {{player}} turn</p>
+			</div>
+			<div id="score">
+				<table>
+					<tr>
+						<td>
+							<h4>Player 1</h4>
+							<h3>{{score[0]}}</h3>
+						</td>
+						<td>
+							<h4>Player 2</h4>
+							<h3>{{score[1]}}</h3>
+						</td>
+					</tr>
+				</table>
+			</div>	
+		</div>
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	</body>
+</html>

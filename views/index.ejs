@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html>
-	<% include ./partials/header %>
+<html ng-app="t3Game">
+	<head>
+		<!-- Header -->
+		<% include ./partials/header %>
+
+		<style type="text/css">
+			body {
+				background: #0F2027;  /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			}
+		</style>
+	</head>
+	
 	<body>
-		<h1>Tic-tac-toe</h1>
-		<h3>The game</h3>
-		<div id="game"></div>
-		<div>
-			<p>This is player <span id="turn">1</span> turn</p>
-		</div>
+		
 	</body>
 </html>
